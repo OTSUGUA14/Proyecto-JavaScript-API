@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+	<link rel="stylesheet" href="src/cardPost.css">
+	<link rel="stylesheet" href="src/cardProduct.css">
+	<link rel="stylesheet" href="src/style.css">
+	<link rel="stylesheet" href="src/cardUsers.css">
+	<link rel="stylesheet" href="src/cardRecep.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<header>
+		<a href="https://www.instagram.com/otsuguariquelme?utm_source=qr&igsh=eTRyZ3FqNTl1a3N6" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png"
+			alt=""  ></a>
+		
+
+		<nav>
+			<ul>
+				<li id="iniciar-sesion" class="btn-header ">Iniciar Sesion</li>
+				<li id="registrarse" class="btn-header ">Registrarse</li>
+				<li id="show-products" class="btn-header ocultar ">Productos</li>
+				<li id="show-posts" class="btn-header ocultar">Posts</li>
+				<li id="show-recetas" class="btn-header ocultar ">Recetas</li>
+				<li id="show-users" class="btn-header ocultar ">Users</li>
+				<li id="cerrar-sesion" class="btn-header ocultar ">Cerrar Sesión</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<!-- Registro -->
+		<section class="registro ocultar">
+			<form id="">
+				<div class=" r-l">
+
+				<div class="datos">
+					<!-- Nombre -->
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" name="nombre">
+					<p class="advertencia ocultar" name="nombre"># El nombre debe tener minimo 4 letras y no puede contener números</p>
+
+					<!-- Apellido -->
+					<label for="apellido">Apellido</label>
+					<input id="apellido" type="text" name="apellido">
+					<p class="advertencia ocultar" name="apellido"># El apellido debe tener minimo 4 letras y no puede contener números</p>
+					
+					<!-- Edad -->
+					<label for="">Edad</label>
+					<input type="text" name="edad">
+					<p class="advertencia ocultar" name="edad"># La edad no puede ser menor a dos digitos ni mayor a dos</p>
+
+					<!-- Pais -->
+					<label for="">Pais</label>
+					<select name="" id="">
+						<option value="Argentina">Argentina</option>
+					</select>
+				</div>
+
+				<div class="datos">
+
+					<!-- Usuario -->
+					<label for="usuario">Usuario</label>
+					<input id="usuario" type="text" name="usuario">
+					<p class="advertencia ocultar" name="usuario"># El usuario debe tener 4 a 16 letras y sin digitos especiales(`,$,#)</p>
+
+					<!-- Contraseña -->
+					<label for="password">Contraseña</label>
+					<input id="password" type="password" name="password">
+					<p class="advertencia ocultar" name="password"># La contraseña 8 a 12 dígitos y digitos especiales (%,&,etc) (Obligarotio)</p>
+
+					<!-- Repetir Contraseña -->
+					<label for="">Repetir contraseña</label>
+					<input type="password" id="repetir" name="repetir" >
+					<p class="advertencia ocultar" name="repetir"># Tiene que ser igual a la contraseñar</p>
+
+					<!-- Email -->
+					<label for="">Email</label>
+					<input type="email" id="email" name="email">
+					<p class="advertencia ocultar"  name="email"># Ingrese un correo valido</p>
+
+				</div>
+				</div>
+
+				<!-- Boton registro -->
+				<button id="btn-registro">Registrarse</button>
+			</form>
+		</section>
+
+		<!-- Iniciar Sesion -->
+		<section class="inicio">
+			<form id="">
+				<div>
+					<!-- Usuario -->
+					<label for="">Usuario</label>
+					<input id="login-user" type="text">
+
+					<!-- Contraseña -->
+					<label for="">Contraseña</label>
+					<input id="login-password" type="password">
+				</div>
+				<!-- Boton Inicio Sesion -->
+				<button id="btn-login">Ingresar</button>
+			</form>
+		</section>
+
+		<!-- Ya iniciado -->
+		<section class="r-s ocultar">
+			<section id="sect-home" class="ocultar">
+				
+			</section>
+			<!-- CARD CONTAINER -->
+			<!-- USERS -->
+			<section id="users" class="card-container ocultar">
+				<!-- Card -->
+				
+				<!-- ---- -->
+			</section>
+			<!-- ----- -->
+			<!-- Productos -->
+			<section id="products" class="card-container">
+				<!-- Card -->
+			
+				<!-- ---- -->
+			</section>
+			<!-- ---- -->
+			<section id="recetas" class="card-container ocultar">
+				<!-- Card -->
+				
+				<!-- ---- -->
+			</section>
+			<!-- Recetas -->
+			<section id="posts" class="card-container ocultar">
+				<!-- Card -->
+				
+					
+				<!-- ---- -->
+			</section>
+			<!-- ---- -->
+		</section>
+	</main>
+	<footer>
+		<ul>
+			<li><img src="https://faldin.com/wp-content/uploads/2018/01/logo-facebook.png" alt=""></li>
+			<li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+					<path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+					<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+					<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+				</svg></li>
+			<li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/2062095_application_chat_communication_logo_whatsapp_icon.svg/2048px-2062095_application_chat_communication_logo_whatsapp_icon.svg.png"
+					alt=""></li>
+		</ul>
+	</footer>
+	<script type="module" src="./src/scripts/main.mjs"></script>
+</body>
+
+</html>
