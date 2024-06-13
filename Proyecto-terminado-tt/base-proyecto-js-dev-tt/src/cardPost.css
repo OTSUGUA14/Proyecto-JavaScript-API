@@ -10,15 +10,26 @@
 }
 
 .username {
-  color: #C6E1ED;
+  color: #25e2f0cb;
   font-size: 0.85em;
   font-weight: 600;
+  font-size: 15px;
 }
 
 .body {
   display: flex;
   flex-direction: column;
 }
+.coo1{
+  border-top: 3px dashed black;
+  border-right: 3px dashed black;
+  border-left: 3px dashed black;
+  border-bottom: 3px dashed black;
+  margin: 10px;
+  padding:5px;
+}
+
+
 
 .body .text {
   margin: 0 10px 0 0;
@@ -27,6 +38,7 @@
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 4px;
+  font-size: 17px;
 }
 
 .footer {

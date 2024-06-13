@@ -6,18 +6,46 @@ const comments =async (id,ver) => {
 
     if (ver){
         if (comments.length==0) {
-                console.log(" asdd");
-                document.querySelector(`.añadir${id}`).classList.remove('ocultar')
-                document.querySelector(`.añadir${id}`).innerHTML+="no hay comentarios"
+            var newText = document.createElement("p");
+            newText.innerHTML ="No hay comentarios"
+                
+                var parentElement = document.querySelector(`.añadir${id}`);
+                newText.classList.add('coo1')
+                if (parentElement) { // Verificar que el elemento existe
+                    parentElement.classList.remove('ocultar');
+                    parentElement.classList.add('text');
+                    parentElement.appendChild(newText);
+                } else {
+                    console.error(`Elemento con la clase 'añadir${id}' no encontrado.`);
+                }
         }else{
 
-            comments.forEach( co =>{
-                console.log(co);
-                    document.querySelector(`.añadir${id}`).classList.remove('ocultar')
-                    document.querySelector(`.añadir${id}`).innerHTML+=`${co.body}<br>`
+           
+
+            comments.forEach(co => {
+                console.log(comments.length);
+                var newFrom = document.createElement("p");
+                newFrom.innerHTML=`@${co.user.username}: `
+                newFrom.classList.add('username');
                 
-             
-            })
+                var newText = document.createElement("p");
+
+                newText.innerHTML = `${co.body}<br>`; // Usar innerHTML para interpretar <br>
+        
+                newText.classList.add('coo1')
+                newText.classList.add('text');
+                
+                var parentElement = document.querySelector(`.añadir${id}`);
+                
+                if (parentElement) { // Verificar que el elemento existe
+                    parentElement.classList.remove('ocultar');
+                   
+                    parentElement.appendChild(newFrom);
+                    parentElement.appendChild(newText);
+                } else {
+                    console.error(`Elemento con la clase 'añadir${id}' no encontrado.`);
+                }
+            });
         }
     }else{
         document.querySelector(`.añadir${id}`).classList.add('ocultar')
@@ -120,7 +148,7 @@ export const getAllPost = async () => {
                       </div>
                       
                   </div>
-                  <p class="añadir${post.id} text" ></p>
+                  <p class="añadir${post.id}" ></p>
             
               </div>
               
@@ -137,9 +165,9 @@ export const getAllPost = async () => {
 
   
       const coment = document.querySelectorAll('.co');
-        var ver=true
+        
         coment.forEach(coo => {
-           
+            var ver=true
           coo.addEventListener('click', () => {
             if (ver){
                
