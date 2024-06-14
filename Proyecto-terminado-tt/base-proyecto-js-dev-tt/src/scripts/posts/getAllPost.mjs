@@ -184,17 +184,18 @@ export const getAllPost = async () => {
           });
       });
       const like=document.querySelectorAll('.lik')
-    like.forEach(li =>{
+  
+      like.forEach(li =>{
        
-       let isLiked = false;
-
-        li.addEventListener('click', (e) => {
-            e.stopPropagation();
-            isLiked = !isLiked;
-            console.log(`Button ID: ${li.dataset.id}, isLiked: ${isLiked}`);
-          likess(li.dataset.id,isLiked)
-      });
-      });
+        let isLiked = false;
+ 
+         li.addEventListener('click', (e) => {
+             e.stopPropagation();
+             isLiked = !isLiked;
+        
+           likess(li.dataset.id,isLiked)
+       }, { once: true});
+       });
       
 //   dislike.addEventListener('click', () => {
 //   });
