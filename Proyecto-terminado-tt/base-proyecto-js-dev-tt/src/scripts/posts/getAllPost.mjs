@@ -19,9 +19,6 @@ const comments =async (id,ver) => {
                     console.error(`Elemento con la clase 'añadir${id}' no encontrado.`);
                 }
         }else{
-
-           
-
             comments.forEach(co => {
 
                 var newFrom = document.createElement("p");
