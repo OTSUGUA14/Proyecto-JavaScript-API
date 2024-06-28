@@ -1,12 +1,13 @@
 .card {
+  display :flex ;
   overflow: visible;
-  width: 220px;
-  height: 290px;
+  min-width: 240px;
+  min-height: 290px; /* Cambiado a min-height */
 }
 
 .content {
   width: 100%;
-  height: 100%;
+  min-height: 100%; /* Cambiado a min-height */
   transform-style: preserve-3d;
   transition: transform 300ms;
   box-shadow: 0px 0px 10px 1px #000000ee;
@@ -17,11 +18,11 @@
   background-color: #151515;
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100%; /* Cambiado a min-height */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 5px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .back {
@@ -66,7 +67,7 @@
     transform: rotateZ(0deg);
   }
 
-  0% {
+  100% {
     transform: rotateZ(360deg);
   }
 }
@@ -79,7 +80,7 @@
 .front .front-content {
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100%; /* Cambiado a min-height */
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -111,17 +112,19 @@
   flex-direction: column;
   align-items: stretch;
   align-content: center;
+}
 
+.instrucciones {
+  font-size: 13px;
 }
 
 .title p {
-  width: 50%;
+  width: 100%; /* Ajustado para asegurar que el texto ocupe el ancho completo */
 }
 
 .card-footer {
   color: #ffffff88;
   margin-top: 5px;
-  font-size: 8px;
   font-size: 12px;
 }
 
@@ -151,9 +154,10 @@
   height: 150px;
   animation-delay: -800ms;
 }
-.Button{
+
+.Button {
   display: flex;
-  border:2px solid #ffffff;
+  border: 2px solid #ffffff;
   padding-right: 0px;
   color: white;
   background-color: #2e312e00;
@@ -166,6 +170,7 @@
   cursor: pointer;
   border-radius: 12px;
 }
+
 #right {
   background-color: #ff2233;
   left: 160px;
