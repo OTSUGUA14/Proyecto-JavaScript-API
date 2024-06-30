@@ -42,7 +42,7 @@ export const getAllReciper = async () => {
                         <div class="back">
                             <div class="back-content">
                                 <img src="${receta.image}" height="80%" width="80%">
-                                <strong>Hover Me</strong>
+                                <strong>Pasame por encima</strong>
                             </div>
                         </div>
                         <div class="front">
