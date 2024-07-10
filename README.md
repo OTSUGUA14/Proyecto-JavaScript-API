@@ -1,3 +1,15 @@
- PROYECTO HECHO EN JAVASCRIPT QUE USA ESTA APPI https://dummyjson.com/.
- APLEMENTA LOCA LOCALSTORAGE SE PUEDRE CREAR UN USUARIO , ININCIAR SESION.
- UNA VES UNICIADO MUESTRA ALGUNOS ELEMENTOS DE LA API CON DIFERENTES CARTAS.
+Proyecto JavaScript con DummyJSON API
+Este proyecto está desarrollado en JavaScript y utiliza la API de DummyJSON. La aplicación permite crear usuarios, iniciar sesión y, una vez autenticado, muestra varios elementos de la API en tarjetas informativas.
+
+Funcionalidades
+Registro de Usuario: Permite crear una cuenta de usuario.
+Inicio de Sesión: Los usuarios pueden iniciar sesión con sus credenciales.
+Almacenamiento Local: Los datos de los usuarios se guardan en localStorage.
+Visualización de Datos: Muestra varios elementos obtenidos de la API de DummyJSON en diferentes tarjetas informativas.
+
+Tecnologías Utilizadas
+JavaScript
+HTML
+CSS
+API de DummyJSON
+localStorage
