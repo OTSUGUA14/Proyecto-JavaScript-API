@@ -10,9 +10,9 @@ Este proyecto está desarrollado en JavaScript y utiliza la [API de DummyJSON](h
 - **Visualización de Datos:** Muestra varios elementos obtenidos de la API de DummyJSON en diferentes tarjetas informativas.
 
 
-Tecnologías Utilizadas
-JavaScript
-HTML
-CSS
-API de DummyJSON
-localStorage
+## Tecnologías Utilizadas
+- **JavaScript**
+- **HTML**
+- **CSS**
+- **API de DummyJSON**
+- **localStorage**
