@@ -1,17 +1,31 @@
-const addToCart =async (id) => {
-    try{
-
-        const res = await fetch(`https://dummyjson.com/product/${id}`)
-        const data = await res.json()
-
-        const usuarioLoged = JSON.parse(localStorage.getItem('stateLogin'))
-        usuarioLoged.user.cart.push(data)
-
-        localStorage.setItem('stateLogin', JSON.stringify(usuarioLoged))
-        
-    }catch(e){
-
+const agregar =async (id) => {
+    const res = await fetch(`https://dummyjson.com/products/${id}`)
+    const  {price}  = await res.json();
+    var cantidad=document.querySelector(`.card2__counter-score${id}`)
+    //Moficar la cantidad del producto
+    var actual=parseFloat(cantidad.textContent, 10)
+    actual++
+    cantidad.textContent=actual
+    //Modifica el total del precio segun la cantidad seleccionada
+    let precio=parseFloat(price,10)
+    console.log(precio);
+    var preci=document.querySelector(`.card2__price${id}`)
+    
+    preci.textContent=`$${(precio*actual).toFixed(2)}`
+}
+const quitar =async (id) => {
+    const res = await fetch(`https://dummyjson.com/products/${id}`)
+    const  {price}  = await res.json();
+    var cantidad=document.querySelector(`.card2__counter-score${id}`)
+    
+    var actual=parseFloat(cantidad.textContent, 10)
+    if (actual!=1) {
+        actual--
     }
+    cantidad.textContent=actual
+    let precio=parseFloat(price,10)
+    var preci=document.querySelector(`.card2__price${id}`)
+    preci.textContent=`$${(precio*actual).toFixed(2)}`
 }
 
 export const getAllProducts =async () => {
@@ -40,11 +54,11 @@ export const getAllProducts =async () => {
             <div class="card2__title">${product.title}</div>
             <div class="card2__subtitle">${product.description}</div>
             <div class="card2__wrapper">
-                <div class="card2__price">$${product.price}</div>
+                <div class="card2__price${product.id}">$${product.price} </div>
                 <div class="card2__counter">
-                    <button class="card2__btn">-</button>
-                    <div class="card2__counter-score">2</div>
-                    <button class="card2__btn card2__btn-plus">+</button>
+                    <button class="card2__btn menos" data-id=${product.id}>-</button>
+                    <div class="card2__counter-score${product.id}">1</div>
+                    <button class="card2__btn card2__btn-plus mas" data-id=${product.id} >+</button>
                 </div>
             </div>
         </div>
@@ -52,11 +66,20 @@ export const getAllProducts =async () => {
             `
         });
 
-        const buttons = document.querySelectorAll('.card2__title')
+        const restar = document.querySelectorAll('.menos')
+        const sumar = document.querySelectorAll('.mas')
         
-        buttons.forEach( btn => {
-            btn.addEventListener('click', () => {
-                console.log("hola");
+        
+        sumar.forEach( suma => {
+            suma.addEventListener('click', () => {
+                
+                agregar(suma.dataset.id)
+            })
+        })
+        restar.forEach( resta => {
+            resta.addEventListener('click', () => {
+                
+                quitar(resta.dataset.id)
             })
         })
 
