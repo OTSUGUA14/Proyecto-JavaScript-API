@@ -52,6 +52,7 @@ const $conterPro=$('#products')
 const $conterRece=$('#recetas')
 const $conterUser=$('#users')
 const $conterPost=$('#posts')
+const $conterArrow=$('#arrow')
 
 
 
@@ -138,39 +139,40 @@ $btnUser.addEventListener('click',()=>{
     $conterPro.classList.add("ocultar")
     $conterRece.classList.add("ocultar")
     $conterUser.classList.remove("ocultar")
-
+    $conterArrow.classList.add("ocultar")
+    
 })
 // __________ MOSTRAR TODOS LAS RECETAS __________
 $btnReceta.addEventListener('click', ()=>{
-   
+    
     getAllReciper();
+    $conterArrow.classList.add("ocultar")
     $conterPost.classList.add("ocultar")
     $conterPro.classList.add("ocultar")
     $conterRece.classList.remove("ocultar")
     $conterUser.classList.add("ocultar")
+    
 })
 
 // __________ MOSTRAR TODOS LOS POST DE DUMMYJSON __________
 
 $btnPosts.addEventListener('click', () => {
     getAllPost();
-   
-   
+    
+    
+    $conterArrow.classList.remove("ocultar")
     $conterPost.classList.remove("ocultar")
     $conterPro.classList.add("ocultar")
     $conterRece.classList.add("ocultar")
     $conterUser .classList.add("ocultar")
     
 })
-// __________ COMENTARIO DE  POST __________
-// $conterComent.addEventListener('click',() =>{
-//     console.log("xd")
-// })
 
-// ______________ Evento Productos ________________________
-$btnProducto.addEventListener('click', () => {
-    
-    getAllProducts()
+    // ______________ Evento Productos ________________________
+    $btnProducto.addEventListener('click', () => {
+        
+        getAllProducts()
+    $conterArrow.classList.add("ocultar")
     $conterPost.classList.add("ocultar")
     $conterPro.classList.remove("ocultar")
     $conterRece.classList.add("ocultar")
@@ -197,8 +199,8 @@ $btnLogIn.addEventListener('click', (e) => {
 
         $sectionHome.innerHTML = `
         <img src=${logInState.user.image} alt="">
-		<h1>Bienvenido <span id="home-name-user">${logInState.user.firstName}</span></h1>
-        `
+		<h1>Welcome <span id="home-name-user">${logInState.user.firstName}</span></h1>
+        ` 
 
         $logInPassword.value = ""
         $logInUser.value = ""
